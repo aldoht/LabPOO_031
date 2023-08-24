@@ -4,11 +4,12 @@ public class RunPractica_2 {
 
     public static void main(String[] args) {
         System.out.println("Hello World!");
+
         // Mazda
         Automovil mazda = new Automovil();
         mazda.setPasajeros(4);
         mazda.setCombustible((float) 65.9);
-        mazda.setColor("Rojo");
+        mazda.setColor("Verde");
         System.out.println("Iniciando recorrido del Mazda.");
         System.out.println(mazda.encenderMotor());
         System.out.println("Color: " + mazda.getColor());
