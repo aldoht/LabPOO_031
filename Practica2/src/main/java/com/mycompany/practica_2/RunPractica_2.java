@@ -19,7 +19,7 @@ public class RunPractica_2 {
         System.out.println(mazda.acelerar());
         System.out.println("Velocidad: " + mazda.getVelocidad());
         System.out.println(mazda.frenar());
-        mazda.setCombustible((float) 26.4);
+        mazda.setCombustible((float) 26.5);
         System.out.println("Combustible: " + mazda.getCombustible());
         System.out.println("Velocidad: " + mazda.getVelocidad());
         System.out.println(mazda.apagarMotor());
