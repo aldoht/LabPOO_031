@@ -7,7 +7,7 @@ public class RunPractica_2 {
 
         // Mazda
         Automovil mazda = new Automovil();
-        mazda.setPasajeros(4);
+        mazda.setPasajeros(5);
         mazda.setCombustible((float) 65.9);
         mazda.setColor("Verde");
         System.out.println("Iniciando recorrido del Mazda.");
