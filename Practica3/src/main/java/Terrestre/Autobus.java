@@ -57,14 +57,14 @@ public class Autobus extends VehiculosTransporte {
             this.avanzar(this.getCombustible());
             this.setCombustible(this.getCombustible() - 10);
             if (this.getCombustible() > 0) {
-                this.recogerPasajero(this.pasajeros);
-                this.bajarPasajero(this.pasajeros);
+                this.recogerPasajero();
+                this.bajarPasajero();
                 System.out.println("Pasajeros: " + this.pasajeros);
                 this.vueltaDerecha(this.getCombustible());
                 this.setCombustible(this.getCombustible() - 10);
                 if (this.getCombustible() > 0) {
-                    this.recogerPasajero(this.pasajeros);
-                    this.bajarPasajero(this.pasajeros);
+                    this.recogerPasajero();
+                    this.bajarPasajero();
                     System.out.println("Pasajeros: " + this.pasajeros);
                     this.vueltaIzquierda(this.getCombustible());
                     this.setCombustible(this.getCombustible() - 10);
