@@ -5,13 +5,13 @@ import Transporte.VehiculosTransporte;
 public class Autobus extends VehiculosTransporte {
     private int pasajeros = 15;
 
-    private void recogerPasajero(int pasajeros) {
+    private void recogerPasajero() {
         System.out.println("Se han recogido 5 pasajeros.");
-        pasajeros += 5;
+        this.pasajeros += 5;
     }
-    private void bajarPasajero(int pasajeros) {
+    private void bajarPasajero() {
         System.out.println("Se han bajado 3 pasajeros.");
-        pasajeros -= 3;
+        this.pasajeros -= 3;
     }
     @Override
     public String encenderMotor(int combustible) {

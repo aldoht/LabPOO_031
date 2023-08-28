@@ -7,10 +7,12 @@ public abstract class VehiculosTransporte {
     public abstract void avanzar(int combustible);
     public abstract void detener(int combustible);
     public void vueltaIzquierda(int combustible) {
-        System.out.println("Vuelta hacia la izquierda.");
+        if (combustible > 0)
+            System.out.println("Vuelta hacia la izquierda.");
     }
     public void vueltaDerecha(int combustible) {
-        System.out.println("Vuelta hacia la derecha.");
+        if (combustible > 0)
+            System.out.println("Vuelta hacia la derecha.");
     }
     public abstract String getName();
     public abstract void movimiento();
