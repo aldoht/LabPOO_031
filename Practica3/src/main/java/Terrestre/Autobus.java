@@ -3,7 +3,8 @@ package Terrestre;
 import Transporte.VehiculosTransporte;
 
 public class Autobus extends VehiculosTransporte {
-    private int pasajeros;
+    private int pasajeros = 15;
+
     private void recogerPasajero(int pasajeros) {
         System.out.println("Se han recogido 5 pasajeros.");
         pasajeros += 5;
@@ -14,7 +15,7 @@ public class Autobus extends VehiculosTransporte {
     }
     @Override
     public String encenderMotor(int combustible) {
-        String msg = null;
+        String msg;
         if (combustible > 0)
             msg = "Se han introducido las llaves y se ha encendido el motor.";
         else
@@ -49,18 +50,22 @@ public class Autobus extends VehiculosTransporte {
     @Override
     public void movimiento() {
         System.out.println("MOVIMIENTO DEL AUTOBÚS");
+        System.out.println("Modelo: " + this.getModelo());
         System.out.println(this.encenderMotor(this.getCombustible()));
         if (this.getCombustible() > 0) {
+            System.out.println("Pasajeros: " + this.pasajeros);
             this.avanzar(this.getCombustible());
             this.setCombustible(this.getCombustible() - 10);
             if (this.getCombustible() > 0) {
                 this.recogerPasajero(this.pasajeros);
                 this.bajarPasajero(this.pasajeros);
+                System.out.println("Pasajeros: " + this.pasajeros);
                 this.vueltaDerecha(this.getCombustible());
                 this.setCombustible(this.getCombustible() - 10);
                 if (this.getCombustible() > 0) {
                     this.recogerPasajero(this.pasajeros);
                     this.bajarPasajero(this.pasajeros);
+                    System.out.println("Pasajeros: " + this.pasajeros);
                     this.vueltaIzquierda(this.getCombustible());
                     this.setCombustible(this.getCombustible() - 10);
                 }

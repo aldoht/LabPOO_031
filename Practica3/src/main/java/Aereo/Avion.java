@@ -9,7 +9,7 @@ public class Avion extends VehiculosTransporte {
     }
     @Override
     public String encenderMotor(int combustible) {
-        String msg = null;
+        String msg;
         if (combustible > 0)
             msg = "El motor del avión se ha encendido.";
         else
@@ -47,6 +47,7 @@ public class Avion extends VehiculosTransporte {
     @Override
     public void movimiento() {
         System.out.println("MOVIMIENTO DEL AVIÓN");
+        System.out.println("Modelo: " + this.getModelo());
         System.out.println(this.encenderMotor(this.getCombustible()));
         if (this.getCombustible() > 0) {
             this.avanzar(this.getCombustible());
