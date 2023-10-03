@@ -14,7 +14,7 @@ public class Main {
         Persona en = new Ingeniero("Hilario");
 
         // Creación del ArrayList //
-        ArrayList<Persona> personas = new ArrayList<Persona>(4);
+        ArrayList<Persona> personas = new ArrayList<>(4);
         personas.add(dr);
         personas.add(st);
         personas.add(lw);
