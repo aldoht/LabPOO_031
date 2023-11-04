@@ -8,6 +8,8 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import clases.saveInfo;
 import java.io.File;
+import java.io.FileOutputStream;
+import java.nio.file.Path;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -42,10 +44,13 @@ public class InsertInfo extends HttpServlet {
             out.println("<h1>Servlet InsertInfo at " + request.getContextPath() + "</h1>");
             out.println("<h1>FName: " + request.getParameter("fname") + "</h1>");
             out.println("<h1>LName: " + request.getParameter("lname") + "</h1>");
-            /*Clase*/
-            File archivo = new File("registros.txt");
-            archivo.createNewFile();
-            saveInfo guardado = new saveInfo(request.getParameter("fname"), request.getParameter("lname"), archivo);
+            // Clase //
+            String nombre1 = request.getParameter("fname");
+            String nombre2 = request.getParameter("lname");
+            Path ruta = new File("datos.txt").toPath();
+            saveInfo save = new saveInfo(ruta);
+            // Se guarda en el directorio de tomcat en la carpeta bin //
+            save.escribir(nombre1, nombre2);
             out.println("</body>");
             out.println("</html>");
         }
