@@ -14,6 +14,11 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import controlador.dbConnection;
+import java.sql.*;
+import java.util.ArrayList;
+import java.util.List;
+import modelo.Users;
 
 /**
  *
@@ -51,8 +56,25 @@ public class InsertInfo extends HttpServlet {
             saveInfo save = new saveInfo(ruta);
             // Se guarda en el directorio de tomcat en la carpeta bin //
             save.escribir(nombre1, nombre2);
+            // Uso de la base de datos //
+            dbConnection conn = new dbConnection();
+            Users user = new Users();
+            // Inserción a base de datos //
+            user.insertData(conn, nombre1, nombre2);
             out.println("</body>");
             out.println("</html>");
+            // Selección de la base de datos //
+            List<String[]> str = new ArrayList<>();
+            int i;
+            try {
+                str = user.selectData(conn);
+            }
+            catch (Exception e) {
+                out.println("<h3>" + str.get(0)[0] + "Mensaje: " + str.get(0)[1] + "</h3>");
+            }
+            for (i = 0; i < str.size(); i++) {
+                out.println("<h3>" + str.get(i)[0] + ' ' + str.get(i)[1] + ' ' + str.get(i)[2] + "</h3>");
+            }
         }
     }
 
