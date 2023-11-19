@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit this template
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <h2>Actualizar datos</h2>
+        <!-- Usando UPDATE en la base de datos -->
+        <form action="UpdateInfo" method="post">
+            <label for="idUserUp">ID:</label>
+            <input type="number" id="idUserUp" name="idUp"><br><br>
+            <label for="fnameUp">First name:</label>
+            <input type="text" id="fnameUp" name="fnameUp"><br><br>
+            <label for="lnameUp">Last name:</label>
+            <input type="text" id="lnameUp" name="lnameUp"><br><br>
+            <input type="submit" value="Actualizar información">
+        </form>
+        <h2>Borrar datos</h2>
+        <!-- Usando DELETE en la base de datos -->
+        <form action="DeleteInfo" method="post">
+            <label for="idUserDel">ID:</label>
+            <input type="number" id="idUserDel" name="IDdel"><br><br>
+            <input type="submit" value="Eliminar información">
+        </form>
+    </body>
+</html>
